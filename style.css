@@ -1,3 +1,5 @@
+/* Tipografía */
+
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;700&display=swap");
 
 @font-face {
@@ -8,20 +10,12 @@
   font-weight: 400;
 }
 
-body {
-  font-family: "Raleway", sans-serif;
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Campfire"; /*cambiar*/
-}
-
-/* Componentes */
 .header {
   width: 100%;
   height: 600px;
@@ -30,7 +24,7 @@ h6 {
   border: 2px solid black;
 }
 .logo {
-  /* font-family: "Campfire"; */
+  text-align: center;
 }
 .descripcion {
   font-family: "Campfire";
@@ -42,3 +36,146 @@ h6 {
   align-self: center;
   justify-self: center;
 }
+
+/* Variables */
+:root {
+  --primario: #92b8cd;
+  --primario-claro: #c3eaff;
+  --primario-fuerte: #63889c;
+  --secundario: #d7e880;
+  --secundario-claro: #ffffb1;
+  --secundario-fuerte: #a4b651;
+  --bg: #ffffff;
+  --font-base: "Raleway", sans-serif;
+  --font-headings: "Campfire";
+  --h1: 80px;
+  --h2: 40px;
+  --h3: 29px;
+  --h4: 64px;
+  --h5: 22px;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+h1 {
+  font-family: "Campfire";
+  align-self: center;
+  justify-self: center;
+  color: #d7e880;
+}
+h2 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 200; /*cambiar*/
+  color: #ffffff;
+}
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Campfire"; /*cambiar*/
+}
+
+/*
+  Elementos base van aqui
+*/
+
+body {
+  font-family: var(--font-base);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-headings);
+}
+
+h1 {
+  font-size: var(--h1);
+}
+
+h2 {
+  font-size: var(--h2);
+}
+
+h3 {
+  font-size: var(--h3);
+}
+
+h4 {
+  font-size: var(--h4);
+}
+
+h5 {
+  font-size: var(--h5);
+}
+
+h6 {
+  font-size: var(--h6);
+}
+
+/* Componentes */
+
+/*
+  Componentes van aqui
+*/
+
+/* Utilities */
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  justify-items: center;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-center {
+  place-content: center;
+}
+
+.mx-auto {
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.outline {
+  outline: 2px solid black;
+}
+
