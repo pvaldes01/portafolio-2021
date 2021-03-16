@@ -26,6 +26,12 @@
   --h3: 29px;
   --h4: 64px;
   --h5: 22px;
+  --gradient: linear-gradient(60deg, var(--primario) 0%, var(--primario-claroclaro) 100%);
+  --gradient-alt: linear-gradient(60deg, var(--primario-claro) 0%, var(--bg) 100%);
+  --transition: all 0.4s ease-in-out;
+  --transition-links: transform 0.25s ease-out;
+  --transition-modes: all 500ms ease-in-out, color 1000ms fill 1000ms path 1000ms ease-in-out;
+
 }
 
 /* Base */
@@ -102,6 +108,8 @@ a {
 .navegacion {
   /* grid-rows: ; */
   grid-column: 1/2;
+  position: fixed;
+  height: 100vh;
 }
 .intro {
   /* grid-rows: ; */
@@ -116,12 +124,6 @@ a {
   height: 100vh;
   writing-mode: vertical-rl;
   padding-left: 40px;
-  color: var(--bg);
-}
-
-.nav:hover {
-  background-color: var(--secundario);
-  color: var(--primario);
 }
 
 .nav ul {
@@ -131,9 +133,46 @@ a {
   justify-content: space-evenly;
 }
 
+.nav ul a {
+ color: var(--bg);
+}
+
 .nav ul a:hover {
   text-decoration: underline;
+  background-color: var(--secundario);
+  color: var(--primario);
 }
+.nav {
+  position: relative;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  width: 103%;
+  transform: scaleX(0);
+  height: 3px;
+  bottom: -2px;
+  left: 0;
+  background-image: var(--secundario);
+  transform-origin: bottom right;
+  transition:var(--transition-links);
+}
+
+.nav a:hover {
+  color: var(--primary);
+}
+
+.nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  background-image: var(--gradient);
+}
+
+.nav a:hover::before {
+  filter: drop-shadow(1px 0 2px var(--primario));
+}
+
 
 .logo {
   padding-left: 55px;
