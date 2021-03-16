@@ -37,12 +37,12 @@ h1 {
   font-family: "Campfire";
   align-self: center;
   justify-self: center;
-  color: #d7e880;
+  color: var(--secundario);
 }
 h2 {
   font-family: "Raleway", sans-serif;
   font-weight: 200; /*cambiar*/
-  color: #ffffff;
+  color: var(--bg);
 }
 h3,
 h4,
@@ -115,6 +115,13 @@ a {
 .nav {
   height: 100vh;
   writing-mode: vertical-rl;
+  padding-left: 40px;
+  color: var(--bg);
+}
+
+.nar:hover {
+  background-color: var(--secundario);
+  color: var(--primario);
 }
 
 .nav ul {
@@ -122,6 +129,12 @@ a {
   height: 100%;
   /* justify-content: center;  */
   justify-content: space-evenly;
+}
+
+.logo {
+  padding-left: 55px;
+  padding-top: 50px;
+  width: 100px;
 }
 
 /* a .header {
@@ -133,9 +146,12 @@ a {
 } */
 .descripcion {
   font-family: "Campfire";
+  padding-left: 25vw;
 }
+
 .titulo {
   font-family: "Raleway", sans-serif;
+  padding-left: 25vw;
 }
 
 /* Utilities */
@@ -192,5 +208,3 @@ a {
 .outline {
   outline: 2px solid black;
 }
-
-
