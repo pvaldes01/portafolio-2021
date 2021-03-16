@@ -119,7 +119,7 @@ a {
   color: var(--bg);
 }
 
-.nar:hover {
+.nav:hover {
   background-color: var(--secundario);
   color: var(--primario);
 }
@@ -129,6 +129,10 @@ a {
   height: 100%;
   /* justify-content: center;  */
   justify-content: space-evenly;
+}
+
+.nav ul a:hover {
+  text-decoration: underline;
 }
 
 .logo {
