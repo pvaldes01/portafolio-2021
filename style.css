@@ -169,6 +169,23 @@ a {
   background-color: var(--primario-claro);
 }
 
+.proyectos-grid {
+  display: grid;
+  grid-auto-flow: column;
+  padding-left: 30px;
+}
+.proyectos-grid2 {
+  display: grid;
+  grid-auto-flow: column;
+  padding-left: 30px;
+}
+
+.proyectos-grid3 {
+  display: grid;
+  grid-auto-flow: column;
+  padding-left: 30px;
+}
+
 /* .intro {
   grid-column: 2/7;
   background: lightskyblue;
