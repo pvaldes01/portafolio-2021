@@ -24,7 +24,7 @@
   --h1: 80px;
   --h2: 40px;
   --h3: 29px;
-  --h4: 64px;
+  --h4: 60px;
   --h5: 22px;
   --gradient: linear-gradient(
     60deg,
@@ -58,6 +58,14 @@ h2 {
   font-weight: 200; /*cambiar*/
   color: var(--bg);
 }
+
+h4 {
+  font-family: "Campfire";
+  align-self: center;
+  justify-self: center;
+  color: var(--secundario);
+}
+
 h3,
 h4,
 h5,
@@ -145,7 +153,7 @@ a {
   grid-auto-flow: column;
   place-content: center;
   height: 100%;
-  width: 100%;
+  width: 60%;
   gap: 6rem;
   transform: rotate(-180deg);
 }
@@ -181,6 +189,15 @@ a {
 }
 
 .proyectos-grid3 {
+  display: grid;
+  grid-auto-flow: column;
+  padding-left: 30px;
+}
+
+.main .sobremi-grid {
+  background-color: var(--primario);
+}
+.sobremi-grid {
   display: grid;
   grid-auto-flow: column;
   padding-left: 30px;
