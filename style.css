@@ -55,7 +55,7 @@ h1 {
 }
 h2 {
   font-family: "Raleway", sans-serif;
-  font-weight: 200; /*cambiar*/
+  font-weight: 200;
   color: var(--bg);
 }
 
@@ -124,14 +124,13 @@ a {
 
 .layout {
   display: flex;
+  min-height: 100vh;
 }
 .navegacion {
-  /* position: ; */
   flex: 1;
   min-height: 100vh;
   background-color: var(--primario);
   color: var(--bg);
-  border: 1px solid black;
 }
 
 .logo {
@@ -142,9 +141,7 @@ a {
 .nav {
   writing-mode: vertical-rl;
   /* padding-left: 40px; */
-  position: sticky;
-  top: 0;
-  height: 90vh;
+  height: 100vh;
   width: 80%;
 }
 
@@ -177,21 +174,22 @@ a {
   background-color: var(--primario-claro);
 }
 
-.proyectos-grid {
-  display: grid;
-  grid-auto-flow: column;
-  padding-left: 30px;
-}
-.proyectos-grid2 {
-  display: grid;
-  grid-auto-flow: column;
-  padding-left: 30px;
-}
-
+.proyectos-grid,
+.proyectos-grid2,
 .proyectos-grid3 {
   display: grid;
   grid-auto-flow: column;
-  padding-left: 30px;
+  margin-left: 30px;
+}
+
+.proyectos-grid {
+  margin-top: var(--h4);
+}
+.proyectos-grid2 {
+}
+
+.proyectos-grid3 {
+  margin-bottom: var(--h1);
 }
 
 .main .sobremi-grid {
@@ -203,6 +201,16 @@ a {
   padding-left: 30px;
 }
 
+.hola {
+  padding-top: var(--h1);
+  padding-left: var(--h4);
+}
+
+.descrip {
+  font-family: "Raleway", sans-serif;
+  font-weight: 200;
+  color: var(--bg);
+}
 /* .intro {
   grid-column: 2/7;
   background: lightskyblue;
