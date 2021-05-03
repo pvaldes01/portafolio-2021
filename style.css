@@ -193,8 +193,13 @@ a {
   margin-bottom: var(--h1);
 }
 
+.proyectosinfo {
+  background-color: var(--secundario-claro);
+}
+
 .proyectosinfo .proyectos-carrusel {
   display: grid;
+  min-height: 100vh;
   grid-auto-flow: column;
 }
 
@@ -217,6 +222,7 @@ a {
 }
 .main .sobremi-grid {
   background-color: var(--primario);
+  min-height: 100vh;
 }
 .sobremi-grid {
   display: grid;
