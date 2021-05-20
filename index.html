@@ -44,13 +44,18 @@
         <h2 class="titulo">paulina valdés ruiz</h2>
       </div>
       <div class="proyectos">
-        <div class="proyectos-grid">
-          <img
-            src="https://res.cloudinary.com/dq5kuockn/image/upload/v1619491525/portafolio/Book_Mockup_1_1_xuqgw9.jpg"
-            width="70%"
-            alt="proyecto1"
-            class="proyectos"
-          />
+        <div class="proyectos-grid" x-data="showInfo()">
+
+            <img
+            x-spread="trigger"
+              src="https://res.cloudinary.com/dq5kuockn/image/upload/v1619491525/portafolio/Book_Mockup_1_1_xuqgw9.jpg"
+              width="70%"
+              alt="proyecto1"
+              class="proyectos"
+            />
+
+
+
           <img src=
           https://res.cloudinary.com/dq5kuockn/image/upload/v1619491678/portafolio/Ventura_pcftnd.jpg
           width="70%" alt="proyecto2" class="poroyectos" />
@@ -60,7 +65,8 @@
             alt="proyecto3"
             class="proyectos"
           />
-        </div>
+           </div>
+        </a>
         <div class="proyectos-grid2">
           <img
             src="https://res.cloudinary.com/dq5kuockn/image/upload/v1619492631/portafolio/Modiliani1_jl6mjz.jpg"
@@ -86,8 +92,8 @@
       </div>
 
       <div class="slider">
-        <div class="proyectos">
-          <h2 class="titulo-p1">MANUAL DE TIPOGRAFÍA</h2>
+        <div class="proyectos-S">
+          <h2 class="titulo">MANUAL DE TIPOGRAFÍA</h2>
           <div class="proyectos-carrusel">
             <img
               src="https://res.cloudinary.com/dq5kuockn/image/upload/v1619491525/portafolio/Book_Mockup_1_1_xuqgw9.jpg"
@@ -108,7 +114,7 @@
               class="mt-3"
             />
           </div>
-          <p class="texto-p1">
+          <p class="texto">
             Soy una comunicadora visual en formación. Me apasiona el diseño por
             las posibilidades tan amplias que existen para poder comunicar una
             misma idea y las diversas formas en la que se puede plasmar en
@@ -116,10 +122,40 @@
             resolución de problemas y muy dedicada.
           </p>
         </div>
+        <div class="proyectos">
+          <h2 class="titulo">MANUAL DE TIPOGRAFÍA</h2>
+          <div class="proyectos-carrusel">
+            <img
+              src="https://res.cloudinary.com/dq5kuockn/image/upload/v1619491525/portafolio/Book_Mockup_1_1_xuqgw9.jpg"
+              width="150%"
+              alt="mt-1"
+              class="mt-1"
+            />
+            <img
+              src="https://res.cloudinary.com/dq5kuockn/image/upload/v1619491525/portafolio/Book_Mockup_4_bvkj9x.jpg"
+              width="80%"
+              alt="mt-2"
+              class="mt-2"
+            />
+            <img
+              src="https://res.cloudinary.com/dq5kuockn/image/upload/v1619491526/portafolio/Book_Mockup_62_kbqhow.jpg"
+              width="90%"
+              alt="mt-3"
+              class="mt-3"
+            />
+          </div>
+          <p class="texto">
+            Soy una comunicadora visual en formación. Me apasiona el diseño por
+            las posibilidades tan amplias que existen para poder comunicar una
+            misma idea y las diversas formas en la que se puede plasmar en
+            distintos medios. Soy una persona comprometida, buena para la
+            resolución de problemas y muy dedicada.
+          </p>
+        </div>
+        <!-- <div class="proyectos">
+        </div>
         <div class="proyectos"></div>
-        <div class="proyectos"></div>
-        <div class="proyectos"></div>
-      </div>
+      --></div>
 
       <div class="sobremi">
         <div class="sobremi-grid">
@@ -136,5 +172,8 @@
         </div>
       </div>
     </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.2/alpine.js"></script>
+    <script src="./scripts.js"></script>
+
   </body>
 </html>
