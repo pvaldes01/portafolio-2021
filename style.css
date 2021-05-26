@@ -1,5 +1,4 @@
 /* Tipografía */
-
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;700&display=swap");
 
 @font-face {
@@ -26,6 +25,7 @@
   --h3: 29px;
   --h4: 60px;
   --h5: 22px;
+  --nav-width: 110px;
   --gradient: linear-gradient(
     60deg,
     var(--primario) 0%,
@@ -42,13 +42,12 @@
     color 1000ms fill 1000ms path 1000ms ease-in-out;
 }
 
-/* Base */
-body {
-  font-family: "Raleway", sans-serif;
+/* body {
+  font-family: var(--font-base);
 }
 
 h1 {
-  font-family: "Campfire";
+  font-family: var(--font-headings);
   align-self: center;
   justify-self: center;
   color: var(--secundario);
@@ -70,9 +69,10 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Campfire"; /*cambiar*/
-}
+  font-family: "Campfire";
+} */
 
+/* Base */
 body {
   font-family: var(--font-base);
 }
@@ -119,20 +119,16 @@ a {
 }
 
 /* Componentes */
-.container {
-  background-color: var(--primario);
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  /* grid-gap: 20px; */
-}
-
 .layout {
   display: flex;
-  min-height: 100vh;
 }
+
+/* Nav */
 .navegacion {
-  flex: 1;
-  min-height: 100vh;
+  position: fixed;
+  border: 2px solid;
+  height: 100vh;
+  width: var(--nav-width);
   background-color: var(--primario);
   color: var(--bg);
 }
@@ -143,11 +139,9 @@ a {
 }
 
 .nav {
-  writing-mode: vertical-rl;
-  /* padding-left: 40px; */
-  height: 100vh;
-  width: 80%;
-  text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .nav ul {
@@ -155,13 +149,21 @@ a {
   grid-auto-flow: column;
   place-content: center;
   height: 100%;
-  width: 60%;
+  width: 100%;
   gap: 6rem;
+  margin: 0;
   transform: rotate(-180deg);
+  writing-mode: vertical-rl;
 }
 
+.nav ul li a {
+  text-align: center;
+}
+
+/* Main */
 .main {
-  flex: 5;
+  width: calc(100% - var(--nav-width));
+  margin-left: auto;
 }
 
 .main .hero {
@@ -172,7 +174,9 @@ a {
 }
 
 .main .hero .titulo {
+  font-weight: 200;
   text-align: center;
+  color: var(--bg);
 }
 
 .main .proyectos {
