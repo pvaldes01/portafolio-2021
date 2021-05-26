@@ -250,6 +250,10 @@ a {
   padding-left: 30px;
 }
 
+.main .sobremi-grid img {
+  display: grid;
+}
+
 .hola {
   padding-top: var(--h1);
   padding-left: var(--h4);
