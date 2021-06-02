@@ -126,11 +126,10 @@ a {
 /* Nav */
 .navegacion {
   position: fixed;
-  border: 2px solid;
+
   height: 100vh;
   width: var(--nav-width);
   background-color: var(--primario);
-  color: var(--bg);
 }
 
 .logo {
@@ -180,7 +179,7 @@ a {
 }
 
 .main .proyectos {
-  background-color: var(--primario-claro);
+  background-color: var(--bg);
 }
 
 .proyectos-grid,
@@ -189,6 +188,7 @@ a {
   display: grid;
   grid-auto-flow: column;
   margin-left: 30px;
+  margin-top: 15px;
 }
 
 .proyectos-grid {
@@ -220,9 +220,9 @@ a {
   /* grid-auto-flow: column; */
 }
 
-.slider .proyectos-S img {
+/* .slider .proyectos-S img {
   margin: auto;
-}
+} */
 
 .proyectos-carrusel {
   display: grid;
@@ -235,13 +235,51 @@ a {
 .proyectos-S .texto {
   font-family: "Raleway", sans-serif;
   color: black;
+  text-align: left;
+  padding-top: 55px;
   padding-left: var(--h5);
+  font-weight: 350;
 }
 
 .main .sobremi-grid {
-  background-color: var(--primario);
+  background-color: var(--bg);
   min-height: 100vh;
 }
+
+.proyectos-contenedor {
+  display: grid;
+  margin-top: 50px;
+  margin-left: 10px;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: auto;
+  /* align-content: start; */
+  gap: 20px;
+}
+.proyectos-contenedor .mt-1 {
+  grid-column: 1 / 2;
+  /* grid-row: 1 /2; */
+}
+.proyectos-contenedor .mt-2 {
+  grid-column: 2 / 3;
+  margin: 0 auto;
+  /* grid-row: 1 /2; */
+}
+.proyectos-contenedor .mt-3 {
+  grid-column: 3 / 4;
+  /* grid-row: 1 /2; */
+  /* align-self: start; */
+}
+.proyectos-contenedor .texto {
+  font-weight: 300;
+  grid-column: 2 / 4;
+  justify-self: start;
+  align-self: start;
+  max-width: 80%;
+  padding-left: 50px;
+  margin-top: -120px;
+  /* align-self: end; */
+}
+
 /* .sobremi-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -259,23 +297,62 @@ a {
 }
 
 .hola {
-  padding-top: var(--h1);
+  margin-top: 30vh;
   padding-left: var(--h4);
   /* grid-column-start: 1fr; */
-  grid-row: 1 / 2;
+  grid-column: 2 / 3;
 }
 
 .descrip {
+  margin-top: 30vh;
+  padding-left: var(--h4);
   font-family: "Raleway", sans-serif;
   font-weight: 200;
-  color: var(--bg);
-  grid-row: 2 / 3;
+  color: black;
+  grid-column: 2 / 3;
+  text-align: left;
   /* grid-column-start: 1fr; */
 }
+
+.fotoYo img {
+  margin-top: 30vh;
+  padding-left: var(--h4);
+  grid-column: 3 / 4;
+}
+
+.contacto-grid {
+  display: grid;
+  grid-auto-flow: column;
+  place-items: center;
+}
+
 /* .intro {
   grid-column: 2/7;
   background: lightskyblue;
 } */
+
+/*
+ * Position both images in same place
+*/
+.hover-switch > img {
+  top: overlay;
+  left: 50px;
+}
+/*
+ * Show the last image by default
+*/
+.hover-switch > img:last-of-type {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -webkit-transition: opacity 0.5s ease-in-out;
+}
+/*
+ * Hide the last image on hover
+*/
+.hover-switch:hover > img:last-of-type {
+  opacity: 0;
+}
 
 /* .nav {
   height: 100vh;
