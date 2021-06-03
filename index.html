@@ -1,512 +1,301 @@
-/* Tipografía */
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;700&display=swap");
-
-@font-face {
-  font-family: "Campfire";
-  src: url("https://res.cloudinary.com/dq5kuockn/raw/upload/v1612456650/portafolio/Campfire_yxpotb.woff2")
-    format("woff2");
-  font-style: normal;
-  font-weight: 400;
-}
-
-/* Variables */
-:root {
-  --primario: #92b8cd;
-  --primario-claro: #c3eaff;
-  --primario-fuerte: #63889c;
-  --secundario: #d7e880;
-  --secundario-claro: #ffffb1;
-  --secundario-fuerte: #a4b651;
-  --bg: #ffffff;
-  --font-base: "Raleway", sans-serif;
-  --font-headings: "Raleway", sans-serif;
-  --h1: 80px;
-  --h2: 40px;
-  --h3: 29px;
-  --h4: 60px;
-  --h5: 22px;
-  --nav-width: 110px;
-  --gradient: linear-gradient(
-    60deg,
-    var(--primario) 0%,
-    var(--primario-claroclaro) 100%
-  );
-  --gradient-alt: linear-gradient(
-    60deg,
-    var(--primario-claro) 0%,
-    var(--bg) 100%
-  );
-  --transition: all 0.4s ease-in-out;
-  --transition-links: transform 0.25s ease-out;
-  --transition-modes: all 500ms ease-in-out,
-    color 1000ms fill 1000ms path 1000ms ease-in-out;
-}
-
-/* Base */
-body {
-  font-family: var(--font-base);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-headings);
-}
-
-h1 {
-  font-size: var(--h1);
-}
-
-h2 {
-  font-size: var(--h2);
-}
-
-h3 {
-  font-size: var(--h3);
-}
-
-h4 {
-  font-size: var(--h4);
-}
-
-h5 {
-  font-size: var(--h5);
-}
-
-h6 {
-  font-size: var(--h6);
-}
-
-a {
-  text-decoration: none;
-}
-
-[hidden] {
-  display: none;
-}
-
-/* Componentes */
-.layout {
-  display: flex;
-}
-
-/* Nav */
-.navegacion {
-  position: fixed;
-
-  height: 100vh;
-  width: var(--nav-width);
-  background-color: var(--primario);
-}
-
-.logo {
-  margin: 0 auto;
-  margin-top: 50px;
-}
-
-.nav {
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.nav ul {
-  display: grid;
-  grid-auto-flow: column;
-  place-content: center;
-  height: 100%;
-  width: 100%;
-  gap: 6rem;
-  margin: 0;
-  transform: rotate(-180deg);
-  writing-mode: vertical-rl;
-}
-
-.nav ul li a {
-  text-align: center;
-}
-
-/* Main */
-.nav ul a {
-  color: var(--bg);
-}
-
-.nav ul a:hover {
-  text-decoration: underline;
-  background-color: var(--secundario);
-  color: var(--primario);
-}
-
-.nav a::after {
-  content: "";
-  position: absolute;
-  width: 103%;
-  transform: scaleX(0);
-  height: 3px;
-  bottom: -2px;
-  left: 0;
-  background-image: var(--secundario);
-  transform-origin: bottom right;
-  transition: var(--transition-links);
-}
-
-.nav a:hover {
-  color: var(--primary);
-}
-
-.nav a:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-  background-image: var(--gradient);
-}
-
-.nav a:hover::before {
-  filter: drop-shadow(1px 0 2px var(--primario));
-}
-
-.main {
-  width: calc(100% - var(--nav-width));
-  margin-left: auto;
-}
-
-.main .hero {
-  height: 100vh;
-  background-color: var(--primario);
-  display: grid;
-  place-content: center;
-}
-
-.portafolio {
-  margin: 0 auto;
-}
-
-.titulo {
-  font-family: "Raleway", sans-serif;
-  text-align: center;
-}
-
-.main .hero .titulo {
-  font-weight: 200;
-  text-align: center;
-  color: var(--bg);
-}
-
-.main .proyectos {
-  background-color: var(--bg);
-}
-
-.proyectos-grid,
-.proyectos-grid2,
-.proyectos-grid3 {
-  display: grid;
-  grid-auto-flow: column;
-  margin-left: 30px;
-  margin-top: 15px;
-}
-
-.proyectos-grid {
-  margin-top: var(--h4);
-}
-.proyectos-grid2 {
-  margin-bottom: var(--h1);
-}
-
-.proyectos-grid3 {
-  margin-bottom: var(--h1);
-}
-
-.slider .proyectos {
-  /* background-color: var(--secundario-claro); */
-  /* min-height: 80vh; */
-  height: auto;
-  display: grid;
-  gap: 50px;
-}
-
-.slider .proyectos-S {
-  /* display: grid; */
-  height: auto;
-  /* grid-auto-flow: column; */
-}
-
-.proyectos-carrusel {
-  display: grid;
-  grid-auto-flow: column;
-  place-items: start;
-  gap: 20px;
-}
-
-.main .sobremi-grid {
-  background-color: var(--bg);
-  min-height: 100vh;
-}
-
-.proyectos-contenedor {
-  display: grid;
-  margin-top: 50px;
-  margin-left: 10px;
-  grid-template-columns: repeat(3, auto);
-  grid-template-rows: auto;
-  /* align-content: start; */
-  gap: 20px;
-}
-.proyectos-S .titulo,
-.proyectos-S .texto {
-  font-family: "Raleway", sans-serif;
-  color: black;
-  text-align: left;
-  padding-top: 55px;
-  padding-left: var(--h5);
-  font-weight: 350;
-}
-
-.proyectos-contenedor .mt-1 {
-  grid-column: 1 / 2;
-}
-.proyectos-contenedor .mt-2 {
-  grid-column: 2 / 3;
-  margin: 0 auto;
-}
-.proyectos-contenedor .mt-3 {
-  grid-column: 3 / 4;
-}
-
-.proyectos-contenedor .texto {
-  font-weight: 300;
-  grid-column: 2 / 4;
-  justify-self: start;
-  align-self: start;
-  max-width: 80%;
-  padding-left: 50px;
-  margin-top: -120px;
-  /* align-self: end; */
-}
-
-.proyectos-S .titulo-V,
-.proyectos-S .texto-V {
-  font-family: "Raleway", sans-serif;
-  color: black;
-  text-align: left;
-  padding-top: 55px;
-  padding-left: var(--h5);
-  font-weight: 350;
-}
-
-.proyectos-contenedor .v-1 {
-  grid-column: 1 / 2;
-}
-.proyectos-contenedor .v-2 {
-  grid-column: 2 / 3;
-  margin: 0 auto;
-}
-.proyectos-contenedor .v-3 {
-  grid-column: 3 / 4;
-}
-
-.proyectos-contenedor .texto-V {
-  font-weight: 300;
-  grid-column: 3 / 4;
-  justify-self: start;
-  align-self: start;
-  max-width: 80%;
-  padding-left: 50px;
-  margin-top: -120px;
-  /* align-self: end; */
-}
-
-.proyectos-S .titulo-CA,
-.proyectos-S .texto-CA {
-  font-family: "Raleway", sans-serif;
-  color: black;
-  text-align: left;
-  padding-top: 55px;
-  padding-left: var(--h5);
-  font-weight: 350;
-}
-
-.proyectos-contenedor .ca-1 {
-  grid-column: 1 / 2;
-}
-.proyectos-contenedor .ca-2 {
-  grid-column: 2 / 3;
-  margin: 0 auto;
-}
-.proyectos-contenedor .ca-3 {
-  grid-column: 3 / 4;
-}
-
-.proyectos-contenedor .texto-CA {
-  font-weight: 300;
-  grid-column: 3 / 4;
-  justify-self: start;
-  align-self: start;
-  max-width: 80%;
-  padding-left: 50px;
-  margin-top: -120px;
-}
-
-.proyectos-S .titulo-CK,
-.proyectos-S .texto-CK {
-  font-family: "Raleway", sans-serif;
-  color: black;
-  text-align: left;
-  padding-top: 55px;
-  padding-left: var(--h5);
-  font-weight: 350;
-}
-
-.proyectos-contenedor .ck-1 {
-  grid-column: 1 / 2;
-}
-.proyectos-contenedor .ck-2 {
-  grid-column: 2 / 3;
-  margin: 0 auto;
-}
-.proyectos-contenedor .ck-3 {
-  grid-column: 3 / 4;
-}
-
-.proyectos-contenedor .texto-CK {
-  font-weight: 300;
-  grid-column: 3 / 4;
-  justify-self: start;
-  align-self: start;
-  max-width: 80%;
-  padding-left: 50px;
-  margin-top: -20px;
-}
-
-.proyectos-S .titulo-ACA,
-.proyectos-S .texto-ACA {
-  font-family: "Raleway", sans-serif;
-  color: black;
-  text-align: left;
-  padding-top: 55px;
-  padding-left: var(--h5);
-  font-weight: 350;
-}
-
-.proyectos-contenedor .aca-1 {
-  grid-column: 1 / 2;
-}
-.proyectos-contenedor .aca-2 {
-  grid-column: 2 / 3;
-  margin: 0 auto;
-}
-.proyectos-contenedor .aca-3 {
-  grid-column: 3 / 4;
-}
-
-.proyectos-contenedor .aca-4 {
-  grid-column: 4 /5;
-}
-
-.proyectos-contenedor .texto-ACA {
-  font-weight: 300;
-  grid-column: 3 / 4;
-  justify-self: start;
-  align-self: start;
-  max-width: 80%;
-  padding-left: 50px;
-  margin-top: -20px;
-}
-
-.proyectos-S .titulo-WO,
-.proyectos-S .texto-WO {
-  font-family: "Raleway", sans-serif;
-  color: black;
-  text-align: left;
-  padding-top: 55px;
-  padding-left: var(--h5);
-  font-weight: 350;
-}
-
-.proyectos-contenedor .wo-1 {
-  grid-column: 1 / 2;
-}
-.proyectos-contenedor .wo-2 {
-  grid-column: 2 / 3;
-  margin: 0 auto;
-}
-
-.proyectos-contenedor .texto-WO {
-  font-weight: 300;
-  grid-column: 2 / 3;
-  justify-self: start;
-  align-self: start;
-  max-width: 80%;
-  padding-left: 50px;
-  padddding-top: -20px;
-}
-
-/* .sobremi-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  padding-left: 30px;
-} */
-.sobremi-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-auto-rows: 140px;
-  padding-left: 30px;
-}
-
-.main .sobremi-grid img {
-  display: grid;
-}
-
-.hola {
-  margin-top: 37vh;
-  padding-left: var(--h4);
-  /* grid-column-start: 1fr; */
-  grid-column: 2 / 3;
-}
-
-.descrip {
-  margin-top: 30vh;
-  padding-left: var(--h4);
-  font-family: "Raleway", sans-serif;
-  font-weight: 200;
-  color: black;
-  grid-column: 2 / 3;
-  text-align: left;
-  /* grid-column-start: 1fr; */
-}
-
-.sobremi-grid .fotoYo img {
-  margin-top: 100px;
-  padding-left: var(--h4);
-  grid-column: 3 / 4;
-}
-
-.contacto-grid {
-  display: grid;
-  grid-auto-flow: column;
-  place-items: center;
-}
-
-/*
- * Position both images in same place
-*/
-.hover-switch > img {
-  top: overlay;
-  left: 50px;
-}
-/*
- * Show the last image by default
-*/
-.hover-switch > img:last-of-type {
-  opacity: 1;
-  transition: opacity 0.5s ease-in-out;
-  -moz-transition: opacity 0.5s ease-in-out;
-  -webkit-transition: opacity 0.5s ease-in-out;
-}
-/*
- * Hide the last image on hover
-*/
-.hover-switch:hover > img:last-of-type {
-  opacity: 0;
-}
+<!DOCTYPE html>
+<html lang="es-MX">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paulina Valdés - Comunicadora visual</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/modern-css-reset/dist/reset.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="layout">
+    <div class="navegacion">
+      <img
+        src="https://res.cloudinary.com/dq5kuockn/image/upload/v1614023269/p_2x_t3pgrt.png"
+        width="30%"
+        alt="logo"
+        class="logo"
+      />
+      <nav class="nav">
+        <ul role="list">
+          <li><a href="#contacto">CONTACTO</a></li>
+          <li><a href="#sobremi">SOBRE MI</a></li>
+          <li><a href="#mistrabajos">MIS TRABAJOS</a></li>
+        </ul>
+      </nav>
+    </div>
+    <!-- <div class="grid grid-center text-center">
+        <img src=
+        https://res.cloudinary.com/dq5kuockn/image/upload/v1616684465/portafolio_2x_iclhdm.png
+        alt="portafolio" class="portafolio" />
+        <h2 class="titulo">paulina valdés</h2>
+      </div> -->
+    <main class="main">
+      <div class="hero">
+        <img
+          src="https://res.cloudinary.com/dq5kuockn/image/upload/v1616684465/portafolio_2x_iclhdm.png"
+          width="50%"
+          alt="portafolio"
+          class="portafolio"
+        />
+        <h2 class="titulo">paulina valdés ruiz</h2>
+      </div>
+      <div class="proyectos">
+        <div class="proyectos-grid" id="mistrabajos" x-data="showInfo()">
+
+            <img
+            x-spread="trigger"
+              src="https://res.cloudinary.com/dq5kuockn/image/upload/v1619491525/portafolio/Book_Mockup_1_1_xuqgw9.jpg"
+              width="70%"
+              alt="proyecto1"
+              class="proyectos"
+            />
+
+
+
+          <img src=
+          https://res.cloudinary.com/dq5kuockn/image/upload/v1619491678/portafolio/Ventura_pcftnd.jpg
+          width="70%" alt="proyecto2" class="poroyectos" />
+          <img
+            src="https://res.cloudinary.com/dq5kuockn/image/upload/v1619491677/portafolio/Zamitiz_y2hnpe.jpg"
+            width="70%"
+            alt="proyecto3"
+            class="proyectos"
+          />
+           </div>
+        </a>
+        <div class="proyectos-grid2">
+          <img
+            src="https://res.cloudinary.com/dq5kuockn/image/upload/v1619492631/portafolio/Modiliani1_jl6mjz.jpg"
+            width="70%"
+            alt="proyecto1"
+            class="proyectos"
+          />
+          <img src=
+          https://res.cloudinary.com/dq5kuockn/image/upload/v1621996872/portafolio/Copia_de_Book_Mockup_01_u6qfxu.jpg
+          width="70%" alt="proyecto2" class="poroyectos" /> <img src=
+          https://res.cloudinary.com/dq5kuockn/image/upload/v1621996105/portafolio/ChocoK_fcbnxu.jpg
+          width="70%" alt="proyecto3" class="proyectos" />
+        </div>
+        <div class="proyectos-grid3">
+          <img src=
+          https://res.cloudinary.com/dq5kuockn/image/upload/v1621996075/portafolio/A3-Poster-Mockup-vol-1_ucvng3.jpg
+          width="70%" alt="proyecto1" class="proyectos" /> <img src=
+          https://res.cloudinary.com/dq5kuockn/image/upload/v1621995858/portafolio/Portadas_hmnhno.jpg
+          width="70%%" alt="proyecto2" class="poroyectos" /> <img src=
+          https://res.cloudinary.com/dq5kuockn/image/upload/v1621995513/portafolio/Captura_de_Pantalla_2021-01-26_a_la_s_10.26.28_sa3rcz.png
+          width="70%" alt="proyecto3" class="proyectos" />
+        </div>
+      </div>
+
+      <div class="slider">
+        <div class="proyectos-S">
+          <h2 class="titulo">MANUAL DE TIPOGRAFÍA</h2>
+          <div class="proyectos-contenedor">
+            <img
+              src="https://res.cloudinary.com/dq5kuockn/image/upload/v1619491525/portafolio/Book_Mockup_1_1_xuqgw9.jpg"
+              width="160%"
+              alt="mt-1"
+              class="mt-1"
+            />
+            <img
+              src="https://res.cloudinary.com/dq5kuockn/image/upload/v1619491525/portafolio/Book_Mockup_4_bvkj9x.jpg"
+              width="80%"
+              alt="mt-2"
+              class="mt-2"
+            />
+            <img
+              src="https://res.cloudinary.com/dq5kuockn/image/upload/v1619491526/portafolio/Book_Mockup_62_kbqhow.jpg"
+              width="80%"
+              alt="mt-3"
+              class="mt-3"
+            />
+            <p class="texto">
+            Concentrándose en el diseño editorial, el manual tipográfico busca poder dar a conocer información de manera estructurada y ejemplificada para hacer más sencillo su entendimiento.
+          </p>
+          </div>
+        </div>
+        <div class="proyectos-S">
+          <h2 class="titulo-V"> VINILOS </h2>
+          <div class="proyectos-contenedor">
+            <img
+              src="https://res.cloudinary.com/dq5kuockn/image/upload/v1621997574/portafolio/love_yjoign.jpg"
+              width="90%"
+              alt="v-1"
+              class="v-1"
+            />
+            <img
+              src="https://res.cloudinary.com/dq5kuockn/image/upload/v1621997564/portafolio/colors_zytzid.jpg"
+              width="90%"
+              alt="v-2"
+              class="v-2"
+            />
+             <img
+              src="https://res.cloudinary.com/dq5kuockn/image/upload/v1621997565/portafolio/Fredrich_lzylrx.jpg"
+              width="90%"
+              alt="v-3"
+              class="v-3"
+            />
+          </div>
+          <p class="texto-V">
+           La música puede transmitir un sentimiento no solamente por sor lo auditivo, sino también por lo visual. El reto de este proyecto fue crear una portada, únicamente usando tipografía, en la que se reflejara la musica de cada uno de los artistas.  Añadir color fue también parte importante del proyecto, esto ayudó a resaltar, dar identidad y jerarquía a la tipografía.
+          </p>
+        </div>
+        <div class="proyectos-S">
+          <h2 class="titulo-CA">COLECCION ALIAS</h2>
+          <div class="proyectos-contenedor">
+            <img
+              src="https://res.cloudinary.com/dq5kuockn/image/upload/v1621996872/portafolio/Copia_de_Book_Mockup_01_u6qfxu.jpg"
+              width="150%"
+              alt="ca-1"
+              class="ca-1"
+            />
+            <img
+              src="https://res.cloudinary.com/dq5kuockn/image/upload/v1621996876/portafolio/Book_Cover_Mockup_x2ccs5.jpg"
+              width="80%"
+              alt="ca-2"
+              class="ca-2"
+            />
+            <img
+              src="https://res.cloudinary.com/dq5kuockn/image/upload/v1621996788/portafolio/Libro2_a0kkso.jpg"
+              width="72%"
+              alt="ca-3"
+              class="ca-3"
+            />
+          </div>
+          <p class="texto-CA">
+           La portada de un libro es parte sumamente importante de la misma, que llame la atención y ayude a crear un interés en el posible cliente es vital. En esta exploración a partir de collages logramos obtener una colección de 5 libros con un mismo estilo visual y al mismo tiempo una identidad propia.
+          </p>
+        </div>
+        <div class="proyectos-S">
+          <h2 class="titulo-CK">CHOCO KRISPIS</h2>
+          <div class="proyectos-contenedor">
+            <img
+              src="https://res.cloudinary.com/dq5kuockn/image/upload/v1621996105/portafolio/ChocoK_fcbnxu.jpg"
+              width="100%"
+              alt="ck-1"
+              class="ck-1"
+            />
+            <img
+              src="https://res.cloudinary.com/dq5kuockn/image/upload/v1621996118/portafolio/FrenteMock_fuhbnw.jpg"
+              width="80%"
+              alt="ck-2"
+              class="ck-2"
+            />
+            <img
+              src="https://res.cloudinary.com/dq5kuockn/image/upload/v1621996111/portafolio/VuletaSola_xeu5nf.jpg"
+              width="80%"
+              alt="ck-3"
+              class="ck-3"
+            />
+          </div>
+          <p class="texto-CK">
+           Con las nuevas regulaciones en la ley de etiquetado, las marcas de cereales enfrentaron el reto de quitar a sus personajes de el empaque de sus productos. Este rediseño de Choco Krispis propone una imagen llamativa a partir del producto.
+          </p>
+        </div>
+        <div class="proyectos-S">
+          <h2 class="titulo-ACA">ACAPULCO</h2>
+          <div class="proyectos-contenedor">
+            <img
+              src="https://res.cloudinary.com/dq5kuockn/image/upload/v1621995513/portafolio/Captura_de_Pantalla_2021-01-26_a_la_s_10.26.28_sa3rcz.png"
+              width="90%"
+              alt="aca-1"
+              class="aca-1"
+            />
+            <img
+              src="https://res.cloudinary.com/dq5kuockn/image/upload/v1621995507/portafolio/Captura_de_Pantalla_2021-01-26_a_la_s_10.31.50_pqgaf1.png"
+              width="80%"
+              alt="aca-2"
+              class="aca-2"
+            />
+            <img
+              src="https://res.cloudinary.com/dq5kuockn/image/upload/v1621995511/portafolio/Captura_de_Pantalla_2021-01-26_a_la_s_10.26.10_xkeq3q.png"
+              width="90%"
+              alt="aca-3"
+              class="aca-3"
+            />
+            <img
+              src="https://res.cloudinary.com/dq5kuockn/image/upload/v1621995509/portafolio/Captura_de_Pantalla_2021-01-26_a_la_s_10.26.03_jlumi6.png"
+              width="90%"
+              alt="aca-4"
+              class="aca-4"
+            />
+          </div>
+          <p class="texto-ACA">
+          Acapulco, una colección de Kris Goyri en la que el color, la naturaleza y la belleza están presentes. Manteniendo el estilo de una marca de alta costura, esta identidad busca mostrar a través de la celebración los 10 años de carrera de Kris.
+          </p>
+        </div>
+        <div class="proyectos-S">
+          <h2 class="titulo-WO">WINGS OVER THE WORLD</h2>
+          <div class="proyectos-contenedor">
+            <img
+              src="https://res.cloudinary.com/dq5kuockn/image/upload/v1621995858/portafolio/Portadas_hmnhno.jpg"
+              width="150%"
+              alt="wo-1"
+              class="wo-1"
+            />
+            <img
+              src="https://res.cloudinary.com/dq5kuockn/image/upload/v1621998632/portafolio/Mockup_aapkcz.jpg"
+              width="80%"
+              alt="wo-2"
+              class="wo-2"
+            />
+          </div>
+          <p class="texto-WO">
+        El diseño de la guía de viajes para la agencia Rashed & Smith transmite el lujo de sus viajes, mostrando la belleza en las localidades y detallando en sus cómodos hospedajes. Una experiencia única y muy exclusiva.
+          </p>
+        </div>
+
+        <!-- <div class="proyectos">
+        </div>
+        <div class="proyectos"></div>
+      --></div>
+
+      <div class="sobremi">
+        <div class="sobremi-grid" id="sobremi">
+          <img src=
+          https://res.cloudinary.com/dq5kuockn/image/upload/v1619709274/Recurso_7_2x_nfjpyi.png
+          width="75%" alt="hola" class="hola" />
+          <p class="descrip">
+            Soy una comunicadora visual en formación. Me apasiona el diseño por
+            las posibilidades tan amplias que existen para poder comunicar una
+            misma idea y las diversas formas en la que se puede plasmar en distintos medios. Soy una persona comprometida, buena para la resolución de problemas y muy dedicada.
+          </p>
+          <img
+              src="https://res.cloudinary.com/dq5kuockn/image/upload/v1622000135/portafolio/Foto_mtmaq7.png"
+              width="80%"
+              alt="fotoYo"
+              class="fotoYo"
+            />
+        </div>
+      </div>
+
+      <div class="contacto-grid" id="contacto">
+            <a href="https://instagram.com/p.varu18?utm_medium=copy_link" class="hover-switch" class="contacto-grid" >
+
+  <img src="https://res.cloudinary.com/dq5kuockn/image/upload/v1622127771/portafolio/Recurso_10_2x_mbwlct.png" />
+              <img src="https://res.cloudinary.com/dq5kuockn/image/upload/v1622676185/portafolio/BN3_2x_aoxnhw.png" />
+
+
+              <a href="https://www.behance.net/pvaldesba70" class="hover-switch" class="contacto-grid" >
+  <img src="https://res.cloudinary.com/dq5kuockn/image/upload/v1622127771/portafolio/Recurso_9_2x_mzr11a.png" />
+                <img src="https://res.cloudinary.com/dq5kuockn/image/upload/v1622676185/portafolio/BN2_2x_rx7nkr.png" />
+
+
+              <a href="mailto:pvaldes@centro.edu.mx" class="hover-switch" class="contacto-grid" >
+   <img src="https://res.cloudinary.com/dq5kuockn/image/upload/v1622127771/portafolio/Recurso_8_2x_oeu607.png" />
+                <img src="https://res.cloudinary.com/dq5kuockn/image/upload/v1622676185/portafolio/BN1_2x_ou9zqm.png" />
+
+</a>
+
+      </div>
+
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.2/alpine.js"></script>
+    <script src="./scripts.js"></script>
+
+  </body>
+</html>
