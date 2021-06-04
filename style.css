@@ -96,10 +96,9 @@ a {
 /* Nav */
 .navegacion {
   position: fixed;
-
+  background-color: var(--primario);
   height: 100vh;
   width: var(--nav-width);
-  background-color: var(--primario);
 }
 
 .logo {
@@ -290,6 +289,7 @@ a {
   font-family: "Raleway", sans-serif;
   color: black;
   text-align: left;
+  width: 5;
   padding-top: 55px;
   padding-left: var(--h5);
   font-weight: 350;
@@ -308,13 +308,12 @@ a {
 
 .proyectos-contenedor .texto-V {
   font-weight: 300;
-  grid-column: 3 / 4;
+  grid-column: 2 / 4;
   justify-self: start;
   align-self: start;
   max-width: 80%;
   padding-left: 50px;
   margin-top: -120px;
-  /* align-self: end; */
 }
 
 .proyectos-S .titulo-CA,
@@ -414,6 +413,34 @@ a {
   margin-top: -20px;
 }
 
+.proyectos-S .titulo-CIN,
+.proyectos-S .texto-CIN {
+  font-family: "Raleway", sans-serif;
+  color: black;
+  text-align: left;
+  padding-top: 55px;
+  padding-left: var(--h5);
+  font-weight: 350;
+}
+
+.proyectos-contenedor .cin-1 {
+  grid-column: 1 / 2;
+}
+.proyectos-contenedor .cin-2 {
+  grid-column: 2 / 3;
+  margin: 0 auto;
+}
+
+.proyectos-contenedor .texto-CIN {
+  font-weight: 300;
+  grid-column: 2 / 3;
+  justify-self: start;
+  align-self: start;
+  max-width: 80%;
+  padding-left: 50px;
+  padding-top: -20px;
+}
+
 .proyectos-S .titulo-WO,
 .proyectos-S .texto-WO {
   font-family: "Raleway", sans-serif;
@@ -439,14 +466,9 @@ a {
   align-self: start;
   max-width: 80%;
   padding-left: 50px;
-  padddding-top: -20px;
+  padding-top: -20px;
 }
 
-/* .sobremi-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  padding-left: 30px;
-} */
 .sobremi-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -456,13 +478,15 @@ a {
 
 .main .sobremi-grid img {
   display: grid;
+  padding-top: 50px;
 }
 
 .hola {
-  margin-top: 37vh;
+  margin-top: 30vh;
   padding-left: var(--h4);
   /* grid-column-start: 1fr; */
   grid-column: 2 / 3;
+  filter: saturate(110%);
 }
 
 .descrip {
@@ -476,24 +500,29 @@ a {
   /* grid-column-start: 1fr; */
 }
 
-.sobremi-grid .fotoYo img {
+.main .sobremi-grid .foto-p img {
   margin-top: 100px;
   padding-left: var(--h4);
   grid-column: 3 / 4;
+  filter: saturate(150%);
 }
 
 .contacto-grid {
   display: grid;
   grid-auto-flow: column;
   place-items: center;
+  padding-right: 100px;
+  filter: saturate(150%);
 }
 
 /*
  * Position both images in same place
 */
 .hover-switch > img {
-  top: overlay;
-  left: 50px;
+  position: absolute;
+  top: calc(50%-100vh);
+  left: calc(50%-100vh);
+  padding-bottom: 50px;
 }
 /*
  * Show the last image by default
